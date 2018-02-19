@@ -125,6 +125,9 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# Extended Filesystem Support
+TARGET_EXFAT_DRIVER := sdfat
+
 # FM
 ifeq ($(BOARD_HAVE_QCOM_FM),true)
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
