@@ -393,7 +393,7 @@ PRODUCT_COPY_FILES += \
 
 # XiaomiParts
 PRODUCT_PACKAGES += \
-    XiaomiParts
+   XiaomiParts
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/sdm660-common/sdm660-common-vendor.mk)
