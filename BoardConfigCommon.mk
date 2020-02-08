@@ -144,6 +144,9 @@ DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/manifests/compatibility_matrix.xml
 TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_sdm660
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sdm660
 
+# LMKD - Enable stats logging
+TARGET_LMKD_STATS_LOG := true
+
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
