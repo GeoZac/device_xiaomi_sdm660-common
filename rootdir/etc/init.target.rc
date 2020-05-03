@@ -110,6 +110,9 @@ on boot
 
     # Touchpanel
     chown system system /sys/touchpanel/double_tap
+    chmod 0660 /sys/touchpanel/double_tap
+
+    write /sys/touchpanel/double_tap 1
 
 #Peripheral manager
 service vendor.per_mgr /system/vendor/bin/pm-service
