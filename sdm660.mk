@@ -291,6 +291,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.recovery.qcom.rc \
     init.target.rc \
+    init.xiaomi_parts.rc \
     ueventd.qcom.rc
 
 # IPv6
