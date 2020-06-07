@@ -76,6 +76,11 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String DEVICE_JASON_PACKAGE_NAME = "org.lineageos.settings.devicex";
     private static final String PREF_DEVICE_JASON = "device_jason";
 
+    public static final String CATEGORY_POWER = "power";
+    public static final String PREF_USB_FASTCHARGE = "fastcharge";
+    public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
+
+    private SecureSettingSwitchPreference mUsbFastCharger;
     private SecureSettingListPreference mTHERMAL;
 
     @Override
@@ -162,6 +167,12 @@ public class DeviceSettings extends PreferenceFragment implements
         } else {
             getPreferenceScreen().removePreference(findPreference(CATEGORY_HALL_WAKEUP));
         }
+
+        if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
+            SecureSettingSwitchPreference mUsbFastCharger = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
+            mUsbFastCharger.setChecked(FileUtils.getValue(USB_FASTCHARGE_PATH).equals("1"));
+            mUsbFastCharger.setOnPreferenceChangeListener(this);
+        } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_POWER)); }
     }
 
     @Override
@@ -221,6 +232,10 @@ public class DeviceSettings extends PreferenceFragment implements
             case PREF_HALL_WAKEUP:
                 FileUtils.setValue(HALL_WAKEUP_PATH, (boolean) value ? "Y" : "N");
                 FileUtils.setProp(HALL_WAKEUP_PROP, (boolean) value);
+                break;
+
+            case PREF_USB_FASTCHARGE:
+                FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value ? "1" : "0");
                 break;
 
             default:

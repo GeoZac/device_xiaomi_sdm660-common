@@ -44,6 +44,10 @@ on boot
     chmod 660 /sys/devices/platform/kcal_ctrl.0/kcal_min
     chmod 660 /sys/devices/platform/kcal_ctrl.0/kcal
 
+    # USB Fastcharge
+    chown system system /sys/kernel/fast_charge/force_fast_charge
+    chmod 0660 /sys/kernel/fast_charge/force_fast_charge
+
 service folio_daemon /system/bin/folio_daemon
     class late_start
     user system

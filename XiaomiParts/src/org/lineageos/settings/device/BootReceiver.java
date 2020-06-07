@@ -79,5 +79,8 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
         } catch (Exception e) {
             // Catch the case where dirac isn't included in the build
         }
+
+        FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_USB_FASTCHARGE, 1));
     }
 }

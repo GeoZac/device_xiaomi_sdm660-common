@@ -154,4 +154,16 @@
             android:title="@string/hall_title"
             android:icon="@drawable/ic_flip" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="power"
+        android:title="@string/fastcharge_control">
+
+        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
+            android:key="fastcharge"
+            android:defaultValue="1"
+            android:icon="@drawable/ic_usb_fastcharge"
+            android:title="@string/fastcharge_title"
+            android:summary="@string/fastcharge_summary" />
+    </PreferenceCategory>
 </PreferenceScreen>

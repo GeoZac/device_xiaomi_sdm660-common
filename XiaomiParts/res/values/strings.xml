@@ -143,4 +143,10 @@
     <string name="edit_value">Choose new Value</string>
     <string name="default_value">Default Value</string>
     <string name="edit_hint"  formatted="false">Value between %1$d and %2$d</string>
+
+    <!-- USB fastcharge -->
+    <string name="fastcharge_control">USB Fastcharge Control</string>
+    <string name="fastcharge_title">Enable USB Fastcharge</string>
+    <string name="fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
+
 </resources>
