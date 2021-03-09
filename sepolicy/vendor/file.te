@@ -10,6 +10,9 @@ type kcal_dev, sysfs_type, fs_type;
 # Hall Switch
 type hall_dev, sysfs_type, fs_type;
 
+# Power
+type sysfs_power_stats, fs_type, sysfs_type;
+
 # XiaomiPart
 type sysfs_headphonegain, sysfs_type, fs_type;
 type sysfs_micgain, sysfs_type, fs_type;
