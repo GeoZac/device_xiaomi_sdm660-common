@@ -83,6 +83,7 @@
 
     <PreferenceCategory
         android:key="thermal_profile"
+        android:enabled="false"
         android:title="@string/thermal_profile_title">
 
         <org.lineageos.settings.device.preferences.SecureSettingListPreference
@@ -97,7 +98,20 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="power"
+        android:title="@string/fastcharge_control">
+
+        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
+            android:key="fastcharge"
+            android:defaultValue="1"
+            android:icon="@drawable/ic_usb_fastcharge"
+            android:title="@string/fastcharge_title"
+            android:summary="@string/fastcharge_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="audio"
+        android:enabled="false"
         android:title="@string/audio_title">
         <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
             android:defaultValue="false"
@@ -153,17 +167,5 @@
             android:summary="@string/hall_wakeup_summary"
             android:title="@string/hall_title"
             android:icon="@drawable/ic_flip" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="power"
-        android:title="@string/fastcharge_control">
-
-        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:key="fastcharge"
-            android:defaultValue="1"
-            android:icon="@drawable/ic_usb_fastcharge"
-            android:title="@string/fastcharge_title"
-            android:summary="@string/fastcharge_summary" />
     </PreferenceCategory>
 </PreferenceScreen>

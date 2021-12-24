@@ -74,11 +74,13 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 context.getContentResolver(), DeviceSettings.PREF_HALL_WAKEUP, 1) == 1 ? "Y" : "N");
         FileUtils.setProp(DeviceSettings.HALL_WAKEUP_PROP, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_HALL_WAKEUP, 1) == 1);
+        /*
         try {
             context.startService(new Intent(context, DiracService.class));
         } catch (Exception e) {
             // Catch the case where dirac isn't included in the build
         }
+        */
 
         FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_USB_FASTCHARGE, 1));
